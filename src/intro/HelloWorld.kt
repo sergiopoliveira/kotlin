@@ -1,3 +1,4 @@
+@file:JvmName("Utils")
 package intro
 
 fun main() {
@@ -15,4 +16,16 @@ fun main(args: Array<String>) {
     var number = 1;
     number++
     println(number)
+}
+
+fun max(a: Int, b: Int): Int = if (a > b) a else b
+
+fun topLevel() = 1
+
+class A {
+    fun member() = 2
+}
+
+fun other() {
+    fun local() = 3
 }

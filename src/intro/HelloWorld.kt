@@ -1,4 +1,5 @@
 @file:JvmName("Utils")
+
 package intro
 
 fun main() {
@@ -16,6 +17,15 @@ fun main(args: Array<String>) {
     var number = 1;
     number++
     println(number)
+    println(
+        listOf('a', 'b', 'c').joinToString(
+            separator = "", prefix = "(", postfix = ")"
+        )
+    )
+
+    displaySeparator()
+    displaySeparator(size = 5)
+    displaySeparator(size = 5, character = '$')
 }
 
 fun max(a: Int, b: Int): Int = if (a > b) a else b
@@ -29,3 +39,11 @@ class A {
 fun other() {
     fun local() = 3
 }
+
+fun displaySeparator(character: Char = '*', size: Int = 10) {
+    repeat(size) {
+        print(character)
+    }
+}
+@JvmOverloads
+fun sum(a: Int = 0, b: Int = 0, c: Int = 0): Int = a+b+c

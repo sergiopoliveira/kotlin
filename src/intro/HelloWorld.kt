@@ -26,6 +26,31 @@ fun main(args: Array<String>) {
     displaySeparator()
     displaySeparator(size = 5)
     displaySeparator(size = 5, character = '$')
+
+
+
+}
+// no ternary operator in kotlin
+//val max = if (a > b) a else b
+
+enum class Color {
+    BLUE, ORANGE, RED
+}
+
+// no break needed
+// when condition must be exhaustive
+fun getDescription(color: Color): String =
+    when(color) {
+        Color.BLUE -> "cold"
+        Color.ORANGE -> "mild"
+        Color.RED -> "hot"
+    }
+
+// check several values at once
+fun respondToInput(input:String) = when (input) {
+    "y", "yes" -> "I'm glad you agree"
+    "n", "no" -> "Sorry to hear that"
+    else -> "I don't understand you"
 }
 
 fun max(a: Int, b: Int): Int = if (a > b) a else b

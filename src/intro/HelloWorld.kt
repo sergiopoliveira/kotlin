@@ -77,3 +77,19 @@ fun sum(a: Int = 0, b: Int = 0, c: Int = 0): Int = a + b + c
 
 
 fun isLetter(c: Char) = c in 'a'..'z' || c in 'A'..'Z'
+
+
+// Extension Functions
+// 'String' is the receiver
+// 'this' refers to the receiver
+fun String.lastChar() = this.get(this.length - 1)
+
+val c: Char = "abc".lastChar()
+
+fun String.repeat(n: Int): String {
+    val sb = StringBuilder(n * length)
+    for (i in 1..n) {
+        sb.append(this)
+    }
+    return sb.toString()
+}

@@ -18,16 +18,17 @@ fun main(args: Array<String>) {
     number++
     println(number)
     println(
-        listOf('a', 'b', 'c').joinToString(
-            separator = "", prefix = "(", postfix = ")"
-        )
+            listOf('a', 'b', 'c').joinToString(
+                    separator = "", prefix = "(", postfix = ")"
+            )
     )
 
     displaySeparator()
     displaySeparator(size = 5)
     displaySeparator(size = 5, character = '$')
 
-
+    isLetter('q')
+    isLetter('*')
 
 }
 // no ternary operator in kotlin
@@ -40,14 +41,14 @@ enum class Color {
 // no break needed
 // when condition must be exhaustive
 fun getDescription(color: Color): String =
-    when(color) {
-        Color.BLUE -> "cold"
-        Color.ORANGE -> "mild"
-        Color.RED -> "hot"
-    }
+        when (color) {
+            Color.BLUE -> "cold"
+            Color.ORANGE -> "mild"
+            Color.RED -> "hot"
+        }
 
 // check several values at once
-fun respondToInput(input:String) = when (input) {
+fun respondToInput(input: String) = when (input) {
     "y", "yes" -> "I'm glad you agree"
     "n", "no" -> "Sorry to hear that"
     else -> "I don't understand you"
@@ -70,5 +71,9 @@ fun displaySeparator(character: Char = '*', size: Int = 10) {
         print(character)
     }
 }
+
 @JvmOverloads
-fun sum(a: Int = 0, b: Int = 0, c: Int = 0): Int = a+b+c
+fun sum(a: Int = 0, b: Int = 0, c: Int = 0): Int = a + b + c
+
+
+fun isLetter(c: Char) = c in 'a'..'z' || c in 'A'..'Z'

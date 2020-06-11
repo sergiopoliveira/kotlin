@@ -30,6 +30,7 @@ fun main(args: Array<String>) {
     isLetter('q')
     isLetter('*')
 
+    println("abc".get(1))
 }
 // no ternary operator in kotlin
 //val max = if (a > b) a else b
@@ -93,3 +94,17 @@ fun String.repeat(n: Int): String {
     }
     return sb.toString()
 }
+
+// Extensions are 'static' Java functions under the hood
+// => No 'override' for extension functions in Kotlin
+
+fun String.get(index: Int) = '*'
+
+// Extensions can overload members
+class C {
+    fun foo() = "member"
+}
+
+fun C.foo(i: Int) = "extension($i)"
+
+//C.foo(2) -> extension(2)
